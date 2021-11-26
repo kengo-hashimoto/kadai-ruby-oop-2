@@ -2,32 +2,26 @@ class Mentor
   
   attr_accessor :name
     
-    def initialize
-      @name = '煌木'
+    def initialize(name)
+      @name = name
+      
     end
     
-    def job(work)
-      "#{@name}です。#{work}"
+    def job
+      puts "#{@name}です。私は現役のITプロフェッショナルです。"
     end
   
 end
 
 class RailsMentor < Mentor
-  
-  attr_accessor :name
-  
-  def initialize
-      @name = '赤出'
-  end
-  
-  def job(work)
-    super 
+
+  def job
+    puts "#{@name}です。私はRubyとRailsでWebアプリケーションを作ります。"
   end
 end
 
      
-kirameki = Mentor.new
-akaide = RailsMentor.new
-
-puts kirameki.job('私は現役のITプロフェッショナルです。')
-puts akaide.job( '私はRubyとRailsでWebアプリケーションを作ります。')
+kirameki = Mentor.new('煌木')
+akaide = RailsMentor.new('赤出')
+kirameki.job
+akaide.job
